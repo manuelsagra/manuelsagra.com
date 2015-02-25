@@ -1,0 +1,283 @@
+@import "normalize";
+
+$bg: #466088;
+$color: #222;
+$fontSize: 1em;
+$font: 'Lato', sans-serif;
+$mainColor: #204b8c;
+$linkHover: #e35d22;
+$spacing: 2em;
+$wrapper: 80%;
+$maxWrapper: 930px;
+
+body {
+	background: $bg no-repeat;
+	color: $color;
+	font-size: $fontSize;
+	font-family: $font;
+	padding: 0;
+	height: 100%;
+}
+::-moz-selection {
+	background: $mainColor;
+	color: #fff;
+	text-shadow: none;
+}
+::selection {
+	background: $mainColor;
+	color: #fff;
+	text-shadow: none;
+}
+a {
+	color: $mainColor;
+	text-decoration: none;
+	transition-property: background-color, color;
+	transition-duration: 0.4s;
+	&:hover {
+		color: $linkHover;
+	}
+}
+p {
+	line-height: 1.4em;
+	margin: $spacing 0;
+}
+img {
+	vertical-align: middle;
+}
+ul {
+	list-style: square;
+}
+
+
+
+
+
+header {
+	width: 100%;
+}
+h1 {
+	margin: 0;
+	font-size: 1em;
+	a {
+		display: block;
+		overflow: hidden;
+		color: #eee;
+		text-shadow: 1px 1px #000;
+		background: $mainColor;
+		&:hover {
+			color: #eee;
+			background-color: lighten($mainColor, 10%);
+		}
+	}
+	span.name, span.att {
+		display: block;
+		padding-left: 1em;
+		margin: 0.5em 0;
+	}
+	span.att {
+		font-size: 0.9em;
+		color: #ddd;
+	}
+	span.avatar {
+		float: right;
+		background: url(img/manu.jpg);
+		background-size: cover;
+	}
+}
+a.projects {
+	background-color: darken($mainColor, 10%);
+	background-image: url(img/briefcase.png);
+}
+a.email {
+	background-color: darken($mainColor, 20%);
+	background-image: url(img/email.png);
+}
+a.twitter {
+	background-color: #55acee;
+	background-image:  url(img/twitter.png);
+}
+a.linkedin {
+	background-color: #1381ba;
+	background-image:  url(img/linkedin.png);
+}
+a.github {
+	background-color: #666;
+	background-image:  url(img/github.png);
+}
+a.youtube {
+	background-color: #cc181e;
+	background-image:  url(img/youtube.png);
+}
+a.flickr {
+	background-color: #006add;
+	background-image:  url(img/flickr.png);
+}
+
+
+
+.box2, .box3 {
+	display: block;
+	float: left;	
+	position: relative;
+	white-space: nowrap;
+	background-repeat: no-repeat;
+	background-position: center center;
+	&:after {
+		content: '';
+		display: block;
+	}
+	span {
+		position: absolute;
+		display: none;
+	} 
+	&:hover {
+		background-color: lighten($mainColor, 10%);
+	}
+}
+.box2 {
+	width: 50%;
+	background-size: 33% auto;
+	&:after {
+		margin-top: (200%/3);
+	}
+}
+.box3 {
+	width: (100%/3);
+	background-size: 50% auto;
+	&:after {
+		margin-top: 100%;
+	}
+}
+
+
+.main {
+	background: #f6f6f6;
+}
+
+
+#contact {
+	text-align: center;
+}
+#projects {
+	padding: 0.01em 0;
+	background: #eee;
+	p {
+		padding: 0 $spacing;
+		font-weight: bold;
+		color: #333;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		margin: 0;
+	}
+	span {
+		display: none;
+	}
+	strong {
+		display: block;
+		text-shadow: 1px 1px #000;
+	}
+	a {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		&:hover span {
+			display: block;
+			position: absolute;
+			padding: 1em;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: $linkHover;
+			color: #fff;
+		}
+	}
+	img {
+		width: 100%;
+		max-width: 100%;
+	}
+
+}
+#contact p {
+	padding-top: 2em;
+	background-size: auto 50%;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+.home {
+	background-image: url(img/home.png);
+}
+.mobile {
+	background-image: url(img/mobile.png);	
+}
+.google {
+	background-image: url(img/google.png);	
+}
+
+
+
+
+
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 800px) {
+	body {
+		font-size: 1.2em;
+	}
+	header {
+		h1, div {
+			float: left;
+			width: 50%;
+		}
+	}
+	#contact, #projects {
+		box-sizing: border-box;
+	}
+	#contact {
+		float: left;
+		width: (100%/3);
+	}
+	#projects {
+		float: right;
+		width: (200%/3);
+		a {
+			float: left;
+			width: (100%)/3;
+		}
+		span {
+			font-size: 0.8em;
+		}
+	}
+	.wrapper {
+		position: relative;
+		width: $wrapper;
+		max-width: $maxWrapper;
+		margin: 5% auto;
+	}
+	.box2 {
+		width: 25%;
+		&:after {
+			margin-top: 60%;
+		}
+	}
+}
